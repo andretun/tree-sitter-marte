@@ -54,7 +54,7 @@
           "named": true
         },
         {
-          "type": "string",
+          "type": "identifier",
           "named": true
         }
       ]
@@ -74,6 +74,10 @@
         },
         {
           "type": "cpar",
+          "named": true
+        },
+        {
+          "type": "identifier",
           "named": true
         },
         {
@@ -108,6 +112,10 @@
           "named": true
         },
         {
+          "type": "identifier",
+          "named": true
+        },
+        {
           "type": "opar",
           "named": true
         },
@@ -139,7 +147,7 @@
           "named": true
         },
         {
-          "type": "string",
+          "type": "identifier",
           "named": true
         },
         {
@@ -319,6 +327,10 @@
   },
   {
     "type": "cpar",
+    "named": true
+  },
+  {
+    "type": "identifier",
     "named": true
   },
   {

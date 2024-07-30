@@ -45,8 +45,15 @@
   ],
   "tree-sitter": [
     {
-      "scope": "source.MARTe",
-      "injection-regex": "^MARTe$"
+      "scope": "source.marte",
+      "file-types": [
+        "marte",
+        "MARTe",
+        "MARTe2"
+      ],
+      "injection-regex": "#!.*\\marte$",
+      "highlights": "queries/highlights.scm",
+      "tags": "queries/tags.scm"
     }
   ]
 }

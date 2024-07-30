@@ -17,13 +17,13 @@ module.exports = grammar({
     ),
 
     exp_var: $ => seq(
-      $.string,
+      $.identifier,
       $.assign,
       $.variable,
     ),
 
     exp_cast: $ => seq(
-      $.string,
+      $.identifier,
       $.assign,
       $.opar,
       $.string,
@@ -32,7 +32,7 @@ module.exports = grammar({
     ),
 
     exp_cast_scalar: $ => seq(
-      $.string,
+      $.identifier,
       $.assign,
       $.opar,
       $.string,
@@ -42,7 +42,7 @@ module.exports = grammar({
     ),
 
     exp_block: $ => seq(
-      $.string,
+      $.identifier,
       $.assign,
       $.block,
     ),
@@ -86,8 +86,10 @@ module.exports = grammar({
       $.cbrace,
     ),
 
+    identifier: _ => /[a-zA-Z_$+][a-zA-Z0-9_]*/,
+
     string: $ => choice(
-      /[a-zA-Z_$+][a-zA-Z0-9_.]*/,
+      /[a-zA-Z][a-zA-Z0-9_.]*/,
       $.string_char,
     ),
 

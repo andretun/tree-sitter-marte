@@ -58,7 +58,7 @@ $TestApp = {
                 Counter = {
                     DataSource = RTThreadSynch 
                     Type = uint32
-                }
+                } // random comment
                 GainCounter = {
                     DataSource = RTThreadSynch 
                     Type = uint32
