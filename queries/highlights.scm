@@ -1,5 +1,10 @@
+(word) @string.special
+(attribute) @attribute
+(signals) @keyword
+(app) @function
 (string_char) @string
-(identifier) @constructor
+(definition) @constructor
+(builtintype) @type.builtin
 (number) @number
 (comment) @comment
 (assign) @operator
@@ -9,3 +14,4 @@
 (cpar) @punctuation.bracket
 (vbar) @operator
 (comma) @punctuation.delimiter
+

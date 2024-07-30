@@ -36,7 +36,7 @@ $TestApp = {
                 }
             }
             OutputSignals = {
-                CalvulationOutput = {
+                Output = {
                     DataSource = DDB1
                     Type = uint32
                 }                

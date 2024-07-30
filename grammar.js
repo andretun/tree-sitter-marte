@@ -86,11 +86,32 @@ module.exports = grammar({
       $.cbrace,
     ),
 
-    identifier: _ => /[a-zA-Z_$+][a-zA-Z0-9_]*/,
+    identifier: $ => choice(
+      $.app,
+      $.definition,
+      $.attribute,
+    ),
 
     string: $ => choice(
-      /[a-zA-Z][a-zA-Z0-9_.]*/,
+      $.word,
       $.string_char,
+      $.builtintype,
+    ),
+
+    app: _ => /[$][a-zA-Z][a-zA-Z0-9_.]*/,
+
+    definition: _ => /[+][a-zA-Z][a-zA-Z0-9_.]*/,
+
+    word: _ => /[a-zA-Z][a-zA-Z0-9_.]*/,
+
+    attribute: $ => choice(
+      /[a-zA-Z][a-zA-Z0-9_.]*/,
+      $.signals,
+    ),
+
+    signals: $ => choice(
+      "InputSignals",
+      "OutputSignals",
     ),
 
     string_char: $ => seq(
@@ -122,5 +143,19 @@ module.exports = grammar({
     vbar: _ => '|',
 
     comma: _ => ',',
+
+    builtintype: $ => choice(
+      'uint8',
+      'uint16',
+      'uint32',
+      'uint64',
+      'int8',
+      'int16',
+      'int32',
+      'int64',
+      'float32',
+      'float64',
+      'char8',
+    )
   }
 });
