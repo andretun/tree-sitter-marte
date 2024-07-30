@@ -1,0 +1,52 @@
+{
+  "name": "tree-sitter-marte",
+  "version": "1.0.0",
+  "description": "MARTe configuration file grammar for tree-sitter",
+  "main": "index.js",
+  "types": "bindings/node",
+  "scripts": {
+    "test": "test",
+    "install": "node-gyp-build",
+    "prebuildify": "prebuildify --napi --strip"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andretun/tree-sitter-marte.git"
+  },
+  "author": "Andrea Antonione",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andretun/tree-sitter-marte/issues"
+  },
+  "homepage": "https://github.com/andretun/tree-sitter-marte#readme",
+  "dependencies": {
+    "node-addon-api": "^7.1.0",
+    "node-gyp-build": "^4.8.0"
+  },
+  "peerDependencies": {
+    "tree-sitter": "^0.21.0"
+  },
+  "peerDependenciesMeta": {
+    "tree_sitter": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "tree-sitter-cli": "^0.22.6",
+    "prebuildify": "^6.0.0"
+  },
+  "files": [
+    "grammar.js",
+    "binding.gyp",
+    "prebuilds/**",
+    "bindings/node/*",
+    "queries/*",
+    "src/**"
+  ],
+  "tree-sitter": [
+    {
+      "scope": "source.MARTe",
+      "injection-regex": "^MARTe$"
+    }
+  ]
+}
