@@ -89,11 +89,11 @@ module.exports = grammar({
     identifier: $ => choice(
       $.app,
       $.definition,
-      $.attribute,
+      $.property,
     ),
 
     string: $ => choice(
-      $.word,
+      $.attribute,
       $.string_char,
       $.builtintype,
     ),
@@ -102,9 +102,9 @@ module.exports = grammar({
 
     definition: _ => /[+][a-zA-Z][a-zA-Z0-9_.]*/,
 
-    word: _ => /[a-zA-Z][a-zA-Z0-9_.]*/,
+    attribute: _ => /[a-zA-Z][a-zA-Z0-9_.]*/,
 
-    attribute: $ => choice(
+    property: $ => choice(
       /[a-zA-Z][a-zA-Z0-9_.]*/,
       $.signals,
     ),

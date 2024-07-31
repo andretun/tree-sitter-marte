@@ -1,4 +1,4 @@
-(word) @string.special
+(property) @property
 (attribute) @attribute
 (signals) @keyword
 (app) @function

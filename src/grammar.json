@@ -262,7 +262,7 @@
         },
         {
           "type": "SYMBOL",
-          "name": "attribute"
+          "name": "property"
         }
       ]
     },
@@ -271,7 +271,7 @@
       "members": [
         {
           "type": "SYMBOL",
-          "name": "word"
+          "name": "attribute"
         },
         {
           "type": "SYMBOL",
@@ -291,11 +291,11 @@
       "type": "PATTERN",
       "value": "[+][a-zA-Z][a-zA-Z0-9_.]*"
     },
-    "word": {
+    "attribute": {
       "type": "PATTERN",
       "value": "[a-zA-Z][a-zA-Z0-9_.]*"
     },
-    "attribute": {
+    "property": {
       "type": "CHOICE",
       "members": [
         {
