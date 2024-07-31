@@ -36,3 +36,7 @@ dist/
 *.wasm
 *.obj
 *.o
+
+# Custom
+build_release.sh
+*.zip
