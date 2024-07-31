@@ -10,7 +10,7 @@ $TestApp = {
                     Type = uint32
                 }
                 Time = {
-                    Frequency = (uint32|"Parameters.freq")
+                    Frequency = (uint32|"a//Parameters.freq")
                     DataSource = Timer
                     Type = uint32
                 }

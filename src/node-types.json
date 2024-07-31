@@ -218,6 +218,11 @@
     }
   },
   {
+    "type": "marte_common",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "matrix",
     "named": true,
     "fields": {},
@@ -258,7 +263,7 @@
       "required": false,
       "types": [
         {
-          "type": "signals",
+          "type": "marte_common",
           "named": true
         }
       ]
@@ -284,11 +289,6 @@
     }
   },
   {
-    "type": "signals",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "string",
     "named": true,
     "fields": {},
@@ -305,16 +305,26 @@
           "named": true
         },
         {
-          "type": "string_char",
+          "type": "string_literal",
           "named": true
         }
       ]
     }
   },
   {
-    "type": "string_char",
+    "type": "string_literal",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escape_sequence",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "variable",
@@ -371,11 +381,31 @@
     "named": false
   },
   {
+    "type": "Class",
+    "named": false
+  },
+  {
+    "type": "DataSource",
+    "named": false
+  },
+  {
     "type": "InputSignals",
     "named": false
   },
   {
+    "type": "NumberOfDimensions",
+    "named": false
+  },
+  {
+    "type": "NumberOfElements",
+    "named": false
+  },
+  {
     "type": "OutputSignals",
+    "named": false
+  },
+  {
+    "type": "Type",
     "named": false
   },
   {
@@ -408,6 +438,10 @@
   },
   {
     "type": "definition",
+    "named": true
+  },
+  {
+    "type": "escape_sequence",
     "named": true
   },
   {

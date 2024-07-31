@@ -94,7 +94,7 @@ module.exports = grammar({
 
     string: $ => choice(
       $.attribute,
-      $.string_char,
+      $.string_literal,
       $.builtintype,
     ),
 
@@ -106,18 +106,44 @@ module.exports = grammar({
 
     property: $ => choice(
       /[a-zA-Z][a-zA-Z0-9_.]*/,
-      $.signals,
+      $.marte_common,
     ),
 
-    signals: $ => choice(
+    marte_common: $ => choice(
       "InputSignals",
       "OutputSignals",
+      "Class",
+      "Type",
+      "DataSource",
+      "NumberOfElements",
+      "NumberOfDimensions",
     ),
 
-    string_char: $ => seq(
+    string_literal: $ => seq(
       '"',
-      repeat(/[^"\\\n]|\\"|\\\\/),
-      '"'
+      repeat(
+        choice(
+          token.immediate(prec(1, /[^\\"\n]+/)),
+          $.escape_sequence,
+        ),
+      ),
+      '"',
+    ),
+
+    escape_sequence: _ => token(
+      prec(
+        1,
+        seq(
+          '\\',
+          choice(
+            /[^xuU]/,
+            /\d{2,3}/,
+            /x[0-9a-fA-F]{2,}/,
+            /u[0-9a-fA-F]{4}/,
+            /U[0-9a-fA-F]{8}/,
+          ),
+        ),
+      ),
     ),
 
     number: $ => choice(
@@ -125,10 +151,19 @@ module.exports = grammar({
       /0[xX][0-9a-fA-F]+/,
     ),
 
-    comment: $ => token(seq(
-      '//',
-      /.*/,
-    )), 
+    comment: $ => token(
+      choice(
+        seq(
+          '//',
+          /.*/,
+        ),
+        seq(
+          '/*',
+          /[^*]*\*+([^/*][^*]*\*+)*/,
+          '/',
+        ),
+      ),
+    ), 
 
     assign: _ => '=',
 
@@ -156,6 +191,6 @@ module.exports = grammar({
       'float32',
       'float64',
       'char8',
-    )
+    ),
   }
 });

@@ -1,8 +1,8 @@
 (property) @property
 (attribute) @attribute
-(signals) @keyword
+(marte_common) @keyword
 (app) @function
-(string_char) @string
+(string_literal) @string
 (definition) @constructor
 (builtintype) @type.builtin
 (number) @number
