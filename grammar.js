@@ -1,5 +1,5 @@
 module.exports = grammar({
-  name: 'MARTe',
+  name: 'marte',
 
   extras: $ => [
     /\s/,      // matches any whitespace character

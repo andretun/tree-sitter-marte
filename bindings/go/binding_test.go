@@ -1,15 +1,15 @@
-package tree_sitter_MARTe_test
+package tree_sitter_marte_test
 
 import (
 	"testing"
 
 	tree_sitter "github.com/smacker/go-tree-sitter"
-	"github.com/tree-sitter/tree-sitter-MARTe"
+	"github.com/tree-sitter/tree-sitter-marte"
 )
 
 func TestCanLoadGrammar(t *testing.T) {
-	language := tree_sitter.NewLanguage(tree_sitter_MARTe.Language())
+	language := tree_sitter.NewLanguage(tree_sitter_marte.Language())
 	if language == nil {
-		t.Errorf("Error loading MarTe grammar")
+		t.Errorf("Error loading Marte grammar")
 	}
 }

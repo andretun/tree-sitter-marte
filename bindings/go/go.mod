@@ -1,4 +1,4 @@
-module github.com/tree-sitter/tree-sitter-MARTe
+module github.com/tree-sitter/tree-sitter-marte
 
 go 1.22
 

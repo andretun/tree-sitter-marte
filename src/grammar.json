@@ -1,5 +1,5 @@
 {
-  "name": "MARTe",
+  "name": "marte",
   "rules": {
     "cdb": {
       "type": "REPEAT1",

@@ -1,4 +1,4 @@
-"MarTe grammar for tree-sitter"
+"Marte grammar for tree-sitter"
 
 from ._binding import language
 

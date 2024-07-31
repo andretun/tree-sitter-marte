@@ -1,6 +1,6 @@
 VERSION := 0.0.1
 
-LANGUAGE_NAME := tree-sitter-MARTe
+LANGUAGE_NAME := tree-sitter-marte
 
 # repository
 SRC_DIR := src
